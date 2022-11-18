@@ -29,23 +29,25 @@ let package = Package(
 	targets: [
 		.target(
 			name: "UIKitExtensionsTarget",
-			dependencies: [.target(name: "UIKitExtensions",
-								   condition: .when(platforms: [.iOS]))],
+			dependencies: [.target(
+				name: "UIKitExtensions",
+				condition: .when(platforms: [.iOS])
+			)],
 			path: "SwiftPM-PlatformExclude/UIKitExtensionsWrap"
 		),
-			  
+		
 		.target(
 			name: "UIKitExtensions",
 			dependencies: []
 		),
 		
-        .target(
-            name: "FoundationExtensions",
-            dependencies: []
+		.target(
+			name: "FoundationExtensions",
+			dependencies: []
 		),
-        .testTarget(
-            name: "FoundationExtensionsTests",
-            dependencies: ["FoundationExtensions"]
+		.testTarget(
+			name: "FoundationExtensionsTests",
+			dependencies: ["FoundationExtensions"]
 		),
-    ]
+	]
 )
