@@ -27,7 +27,7 @@ jobs:
 
     - name: Build swiftformat
       run: |
-        if [ ! -f ".build/swiftformat" ]; then
+        if [ ! -f ".build/release/swiftformat" ]; then
           swift build --product swiftformat -c release
         fi
 
