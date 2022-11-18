@@ -22,12 +22,11 @@ let package = Package(
 			name: "UIKitExtensions",
 			targets: ["UIKitExtensionsTarget"]
 		),
-    ],
-    dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
-    ],
-    targets: [
+	],
+	dependencies: [
+		.package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.50.3"),
+	],
+	targets: [
 		.target(
 			name: "UIKitExtensionsTarget",
 			dependencies: [.target(name: "UIKitExtensions",
