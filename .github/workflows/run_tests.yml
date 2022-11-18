@@ -10,13 +10,42 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build:
 
-    runs-on: macos-latest
+  verify_formatting:
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
+
+    - name: Restore swiftformat build cache
+      uses: actions/cache@v1
+      with:
+        path: .build/release/swiftformat
+        key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+        restore-keys: |
+          ${{ runner.os }}-spm-
+
+    - name: Build swiftformat
+      run: |
+        if [ ! -f ".build/swiftformat" ]; then
+          swift build --product swiftformat -c release
+        fi
+
+    - name: Run swiftformat
+      run: .build/release/swiftformat --verbose .
+
+    - name: Verify that formatted code is unchanged
+      run: git diff --exit-code HEAD
+
+
+  build_and_test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
     - name: Build
-      run: swift build -v
+      run: swift build
+    
     - name: Run tests
-      run: swift test -v
+      run: swift test
