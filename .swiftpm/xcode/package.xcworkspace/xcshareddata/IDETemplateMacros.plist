@@ -3,6 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>FILEHEADER</key>
-	<string></string>
+    <string> Created for ___PROJECTNAME___ in ___YEAR___
+//
+// Copyright (c) https://github.com/DuckingSwift</string>
 </dict>
 </plist>
