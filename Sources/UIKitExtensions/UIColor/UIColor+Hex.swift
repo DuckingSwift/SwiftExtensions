@@ -1,5 +1,7 @@
 //
 
+#if os(iOS)
+
 import UIKit
 
 public extension UIColor {
@@ -30,3 +32,5 @@ public extension UIColor {
         self.init(red: r, green: g, blue: b, alpha: a)
     }
 }
+
+#endif

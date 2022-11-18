@@ -1,5 +1,7 @@
 //
 
+#if os(iOS)
+
 import UIKit
 
 /// Sugar to get sides of the mask
@@ -14,3 +16,5 @@ public extension CACornerMask {
         return [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     }
 }
+
+#endif
