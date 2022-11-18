@@ -28,3 +28,7 @@ public extension String {
 		return trimmingCharacters(in: NSCharacterSet.whitespaces)
 	}
 }
+
+// MARK: - SafeIndexCollection
+
+extension String: SafeIndexCollection {}
