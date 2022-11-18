@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "SwiftExtensions",
+	name: "SwiftExtensions",
 	platforms: [
 		.driverKit(.v19),
 		.iOS(.v13),
@@ -13,10 +13,10 @@ let package = Package(
 		.tvOS(.v13),
 		.watchOS(.v6),
 	],
-    products: [
-        .library(
-            name: "FoundationExtensions",
-            targets: ["FoundationExtensions"]
+	products: [
+		.library(
+			name: "FoundationExtensions",
+			targets: ["FoundationExtensions"]
 		),
 		.library(
 			name: "UIKitExtensions",
