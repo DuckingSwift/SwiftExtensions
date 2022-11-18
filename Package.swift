@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "SwiftExtensions",
+	name: "SwiftExtensions",
 	platforms: [
 		.driverKit(.v19),
 		.iOS(.v13),
@@ -13,40 +13,41 @@ let package = Package(
 		.tvOS(.v13),
 		.watchOS(.v6),
 	],
-    products: [
-        .library(
-            name: "FoundationExtensions",
-            targets: ["FoundationExtensions"]
+	products: [
+		.library(
+			name: "FoundationExtensions",
+			targets: ["FoundationExtensions"]
 		),
 		.library(
 			name: "UIKitExtensions",
 			targets: ["UIKitExtensionsTarget"]
 		),
-    ],
-    dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
-    ],
-    targets: [
+	],
+	dependencies: [
+		.package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.50.3"),
+	],
+	targets: [
 		.target(
 			name: "UIKitExtensionsTarget",
-			dependencies: [.target(name: "UIKitExtensions",
-								   condition: .when(platforms: [.iOS]))],
+			dependencies: [.target(
+				name: "UIKitExtensions",
+				condition: .when(platforms: [.iOS])
+			)],
 			path: "SwiftPM-PlatformExclude/UIKitExtensionsWrap"
 		),
-			  
+		
 		.target(
 			name: "UIKitExtensions",
 			dependencies: []
 		),
 		
-        .target(
-            name: "FoundationExtensions",
-            dependencies: []
+		.target(
+			name: "FoundationExtensions",
+			dependencies: []
 		),
-        .testTarget(
-            name: "FoundationExtensionsTests",
-            dependencies: ["FoundationExtensions"]
+		.testTarget(
+			name: "FoundationExtensionsTests",
+			dependencies: ["FoundationExtensions"]
 		),
-    ]
+	]
 )
