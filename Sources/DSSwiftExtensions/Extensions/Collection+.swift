@@ -1,4 +1,4 @@
-// Created for SwiftExtensions in 2022
+// Created for DSSwiftExtensions in 2022
 //
 // Copyright (c) https://github.com/DuckingSwift
 

@@ -1,12 +1,12 @@
-// Created for SwiftExtensions in 2022
+// Created for DSSwiftExtensions in 2022
 //
 // Copyright (c) https://github.com/DuckingSwift
 
 import XCTest
 
-@testable import FoundationExtensions
+@testable import DSSwiftExtensions
 
-final class FoundationExtensionsTests: XCTestCase {
+final class DSSwiftExtensions: XCTestCase {
 	func test_isNotEmpty() throws {
 		XCTAssertTrue([1].isNotEmpty)
 	}
