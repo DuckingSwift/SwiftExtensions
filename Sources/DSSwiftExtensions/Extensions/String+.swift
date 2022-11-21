@@ -1,8 +1,10 @@
-// Created for SwiftExtensions in 2022
+// Created for DSSwiftExtensions in 2022
 //
 // Copyright (c) https://github.com/DuckingSwift
 
 import Foundation
+
+// MARK: - Base64
 
 public extension String {
 	/// Encodes itself to Base64
@@ -14,5 +16,15 @@ public extension String {
 	var fromBase64: Self? {
 		guard let data = Data(base64Encoded: self) else { return nil }
 		return String(data: data, encoding: .utf8)
+	}
+}
+
+// MARK: - Trim
+
+public extension String {
+	/// Trims whitespaces
+	var trimmedWhitespaces: Self {
+		if isEmpty { return self }
+		return trimmingCharacters(in: NSCharacterSet.whitespaces)
 	}
 }

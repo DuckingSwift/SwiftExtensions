@@ -6,4 +6,4 @@ echo "Building swiftformat..."
 swift build --product swiftformat -c release
 
 echo "Formatting..."
-./bin/swiftformat .
+.build/release/swiftformat .

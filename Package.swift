@@ -1,4 +1,4 @@
-// swift-tools-version:5.5
+// swift-tools-version: 5.6
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -15,12 +15,8 @@ let package = Package(
 	],
 	products: [
 		.library(
-			name: "FoundationExtensions",
-			targets: ["FoundationExtensions"]
-		),
-		.library(
-			name: "UIKitExtensions",
-			targets: ["UIKitExtensionsTarget"]
+			name: "DSSwiftExtensions",
+			targets: ["DSSwiftExtensions"]
 		),
 	],
 	dependencies: [
@@ -28,26 +24,12 @@ let package = Package(
 	],
 	targets: [
 		.target(
-			name: "UIKitExtensionsTarget",
-			dependencies: [.target(
-				name: "UIKitExtensions",
-				condition: .when(platforms: [.iOS])
-			)],
-			path: "SwiftPM-PlatformExclude/UIKitExtensionsWrap"
-		),
-		
-		.target(
-			name: "UIKitExtensions",
-			dependencies: []
-		),
-		
-		.target(
-			name: "FoundationExtensions",
+			name: "DSSwiftExtensions",
 			dependencies: []
 		),
 		.testTarget(
-			name: "FoundationExtensionsTests",
-			dependencies: ["FoundationExtensions"]
+			name: "DSSwiftExtensionsTests",
+			dependencies: ["DSSwiftExtensions"]
 		),
 	]
 )
